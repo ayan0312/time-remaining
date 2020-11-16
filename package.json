@@ -1,6 +1,6 @@
 {
     "name": "time-remaining",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "dist/time-remaining.js",
     "unpkg": "dist/time-remaining.js",
@@ -24,6 +24,7 @@
     ],
     "author": "ayan0312",
     "license": "MIT",
+    "homepage": "https://github.com/ayan0312/time-remaining",
     "lint-staged": {
         "*.ts": [
             "prettier --write"

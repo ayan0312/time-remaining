@@ -10,7 +10,7 @@ export const HOUR = 60 * MINUTE
 export const DAY = 24 * HOUR
 
 export function toLocalDate(date: Date, offsetMinute?: number): Date {
-    if (!offsetMinute) offsetMinute = (new Date()).getTimezoneOffset()
+    if (!offsetMinute) offsetMinute = new Date().getTimezoneOffset()
     const offsetMS = offsetMinute * MINUTE
     const newDate = new Date(date)
     newDate.setTime(newDate.getTime() + offsetMS)
@@ -18,10 +18,10 @@ export function toLocalDate(date: Date, offsetMinute?: number): Date {
 }
 
 export function toLocalMS(ms: number, offsetMinute?: number): number {
-    if (!offsetMinute) offsetMinute = (new Date()).getTimezoneOffset()
+    if (!offsetMinute) offsetMinute = new Date().getTimezoneOffset()
     const offsetMS = offsetMinute * MINUTE
     const result = ms + offsetMS
-    return result >= 0 ? result : ms
+    return result < 0 ? 0 : result
 }
 
 export function getEndSecond(date: Date): Date {

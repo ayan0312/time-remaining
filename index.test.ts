@@ -66,9 +66,7 @@ test('toTimeOptions', () => {
     })
 })
 
-describe.each([
-    new Date(86400000)
-])('get end of the time ', (date) => {
+describe.each([new Date(86400000)])('get end of the time ', (date) => {
     test('getEndSecond', () => {
         const end = getEndSecond(date)
         expect(end.getTime()).toBe(86400999)
@@ -100,9 +98,7 @@ describe.each([
     })
 })
 
-describe.each([
-    new Date(86400000)
-])('get the remaining time', (date) => {
+describe.each([new Date(86400000)])('get the remaining time', (date) => {
     test('getRemainingMS', () => {
         expect(getRemainingMS(date)).toBe(999)
     })
@@ -124,9 +120,7 @@ describe.each([
     })
 })
 
-describe.each([
-    new Date(86400000)
-])('get the local date', (date) => {
+describe.each([new Date(86400000)])('get the local date', (date) => {
     test('getEndSecond', () => {
         const newDate = toLocalDate(getEndSecond(date), -480)
         expect(newDate.getTime()).toBe(57600999)
@@ -158,22 +152,20 @@ describe.each([
     })
 })
 
-describe.each([
-    new Date(86400000)
-])('get the local time', (date) => {
+describe.each([new Date(86400000)])('get the local time', (date) => {
     test('getRemainingMS', () => {
         const ms = toLocalMS(getRemainingMS(date), -480)
-        expect(ms).toEqual(999)
+        expect(ms).toEqual(0)
     })
 
     test('getRemainingSecond', () => {
         const ms = toLocalMS(getRemainingSecond(date), -480)
-        expect(ms).toEqual(59999)
+        expect(ms).toEqual(0)
     })
 
     test('getRemainingMinute', () => {
         const ms = toLocalMS(getRemainingMinute(date), -480)
-        expect(ms).toEqual(3599999)
+        expect(ms).toEqual(0)
     })
 
     test('getRemainingHour', () => {

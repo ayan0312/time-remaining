@@ -1,6 +1,18 @@
 # time-remaining
 This is the repository for time-remaining
 
+## example
+```typescript
+let date = new Date(86400000)
+console.log(date.getTime()) // 86400000
+console.log(date.toUTCString()) // "Fri, 02 Jan 1970 00:00:00 GMT"
+let timezoneOffset = date.getTimezoneOffset() // -480 minutes
+let newDate = toLocalDate(getEndHour(date), timezoneOffset)
+console.log(newDate.getTime()) // 61199999
+console.log(newDate) // Fri Jan 02 1970 00:59:59 GMT+0800
+console.log(newDate.toUTCString()) // "Thu, 01 Jan 1970 16:59:59 GMT"
+```
+
 ## test
 `toMS`,`timeOptionsToMS`,`isTimeOptionsEmpty`,`toTimeOptions`
 ```typescript
